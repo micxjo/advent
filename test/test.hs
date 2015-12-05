@@ -3,13 +3,14 @@
 import Advent.Day1
 import Advent.Day2
 import Advent.Day3
+import Advent.Day4
 
 import Test.Tasty
 import Test.Tasty.HUnit
 
 main = defaultMain tests
 
-tests = testGroup "Advent of Code Tests" [day1, day2, day3]
+tests = testGroup "Advent of Code Tests" [day1, day2, day3, day4]
 
 day1 = testGroup "Day 1"
        [testCase "Part 1" $
@@ -43,3 +44,8 @@ day3 = testGroup "Day 3"
        do countRoboDeliveries "^>" @?= 3
           countRoboDeliveries "^>b<" @?= 3
           countRoboDeliveries "^v^v^v^v^v" @?= 11]
+
+day4 = testGroup "Day 4"
+       [testCase "Part 1" $
+        do hash "abcdef" 609043 @?= "000001DBBFA3A5C83A2D506429C7B00E"
+           hash "pqrstuv" 1048970 @?= "000006136EF2FF3B291C85725F17325C"]
