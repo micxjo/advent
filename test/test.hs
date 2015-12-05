@@ -57,4 +57,9 @@ day5 = testGroup "Day 5"
            isNice "aaa" @?= True
            isNice "lchzalrnumimnmhp" @?= False
            isNice "haegwjzuvuyypxyu" @?= False
-           isNice "dvszwmarrgswjxmb" @?= False]
+           isNice "dvszwmarrgswjxmb" @?= False
+       ,testCase "Part 2" $
+       do isNiceNew "qjhvhtzxzqqjkmpb" @?= True
+          isNiceNew "xxyxx" @?= True
+          isNiceNew "uurcxstgmygtbstg" @?= False
+          isNiceNew "ieodomkazucvgmuy" @?= False]
