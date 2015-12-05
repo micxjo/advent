@@ -14,7 +14,8 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Advent.Day1, Advent.Day2, Advent.Day3, Advent.Day4
+  exposed-modules:     Advent.Day1, Advent.Day2, Advent.Day3, Advent.Day4,
+                       Advent.Day5
   ghc-options:         -Wall -Werror -fwarn-incomplete-uni-patterns
   build-depends:       base >= 4.7 && < 5
                      , containers
