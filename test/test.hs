@@ -5,13 +5,14 @@ import Advent.Day2
 import Advent.Day3
 import Advent.Day4
 import Advent.Day5
+import Advent.Day10
 
 import Test.Tasty
 import Test.Tasty.HUnit
 
 main = defaultMain tests
 
-tests = testGroup "Advent of Code Tests" [day1, day2, day3, day4, day5]
+tests = testGroup "Advent of Code Tests" [day1, day2, day3, day4, day5, day10]
 
 day1 = testGroup "Day 1"
        [testCase "Part 1" $
@@ -63,3 +64,12 @@ day5 = testGroup "Day 5"
           isNiceNew "xxyxx" @?= True
           isNiceNew "uurcxstgmygtbstg" @?= False
           isNiceNew "ieodomkazucvgmuy" @?= False]
+
+day10 = testGroup "Day 10"
+        [testCase "Part 1" $
+         do lookAndSay "1" @?= "11"
+            lookAndSay "11" @?= "21"
+            lookAndSay "21" @?= "1211"
+            lookAndSay "1211" @?= "111221"
+            lookAndSay "111221" @?= "312211"
+            iterativeLookAndSay "1" 5 @?= 6]
