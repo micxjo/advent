@@ -26,6 +26,7 @@ library
                      , multimap
                      , text
                      , text-icu
+                     , text-regex-replace
                      , vector
   default-language:    Haskell2010
 

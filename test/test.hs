@@ -72,7 +72,12 @@ day8 = testGroup "Day 8"
         do charCount "\"\"" @?= 2
            charCount "\"abc\"" @?= 2
            charCount "\"aaa\\\"aaa\"" @?= 3
-           charCount "\"\\x27\"" @?= 5]
+           charCount "\"\\x27\"" @?= 5
+       ,testCase "Part 2" $
+        do encode "\"\"" @?= "\"\\\"\\\"\""
+           encode "\"abc\"" @?= "\"\\\"abc\\\"\""
+           encode "\"aaa\\\"aaa\"" @?= "\"\\\"aaa\\\\\\\"aaa\\\"\""
+           encode "\"\\x27\"" @?= "\"\\\"\\\\x27\\\"\""]
 
 day10 = testGroup "Day 10"
         [testCase "Part 1" $
