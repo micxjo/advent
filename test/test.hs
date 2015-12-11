@@ -7,6 +7,7 @@ import Advent.Day4
 import Advent.Day5
 import Advent.Day8
 import Advent.Day10
+import Advent.Day11
 
 import Test.Tasty
 import Test.Tasty.HUnit
@@ -14,7 +15,7 @@ import Test.Tasty.HUnit
 main = defaultMain tests
 
 tests = testGroup "Advent of Code Tests"
-        [day1, day2, day3, day4, day5, day8, day10]
+        [day1, day2, day3, day4, day5, day8, day10, day11]
 
 day1 = testGroup "Day 1"
        [testCase "Part 1" $
@@ -87,3 +88,11 @@ day10 = testGroup "Day 10"
             lookAndSay "1211" @?= "111221"
             lookAndSay "111221" @?= "312211"
             iterativeLookAndSay "1" 5 @?= 6]
+
+day11 = testGroup "Day 11"
+        [testCase "Part 1" $
+         do goodPassword "hijklmn" @?= False
+            goodPassword "abbceffg" @?= False
+            goodPassword "abbcegjk" @?= False
+            nextPassword "abcdefgh" @?= "abcdffaa"
+            nextPassword "ghijklmn" @?= "ghjaabcc"]
