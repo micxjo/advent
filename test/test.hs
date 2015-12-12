@@ -8,6 +8,7 @@ import Advent.Day5
 import Advent.Day8
 import Advent.Day10
 import Advent.Day11
+import Advent.Day12
 
 import Test.Tasty
 import Test.Tasty.HUnit
@@ -15,7 +16,7 @@ import Test.Tasty.HUnit
 main = defaultMain tests
 
 tests = testGroup "Advent of Code Tests"
-        [day1, day2, day3, day4, day5, day8, day10, day11]
+        [day1, day2, day3, day4, day5, day8, day10, day11, day12]
 
 day1 = testGroup "Day 1"
        [testCase "Part 1" $
@@ -96,3 +97,17 @@ day11 = testGroup "Day 11"
             goodPassword "abbcegjk" @?= False
             nextPassword "abcdefgh" @?= "abcdffaa"
             nextPassword "ghijklmn" @?= "ghjaabcc"]
+
+day12 = testGroup "Day 12"
+        [testCase "Part 1" $
+         do jsonSum "[1,2,3]" @?= 6
+            jsonSum "{\"a\": 2,\"b\":4}" @?= 6
+            jsonSum "{\"a\":[-1, 1]}" @?= 0
+            jsonSum "[-1,{\"a\":1}]" @?= 0
+            jsonSum "[]" @?= 0
+            jsonSum "{}" @?= 0
+        ,testCase "Part 2" $
+        do jsonSumUnred "[1,2,3]" @?= 6
+           jsonSumUnred "[1,{\"c\":\"red\",\"b\":2},3]" @?= 4
+           jsonSumUnred "{\"d\":\"red\",\"e\":[1,2,3,4],\"f\":5}" @?= 0
+           jsonSumUnred "[1,\"red\",5]" @?= 6]
