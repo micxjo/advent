@@ -16,7 +16,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     Advent.Day1, Advent.Day2, Advent.Day3, Advent.Day4,
                        Advent.Day5, Advent.Day8, Advent.Day9, Advent.Day10,
-                       Advent.Day11, Advent.Day12
+                       Advent.Day11, Advent.Day12, Advent.Day17
   ghc-options:         -Wall -Werror -fwarn-incomplete-uni-patterns
   build-depends:       aeson
                      , attoparsec

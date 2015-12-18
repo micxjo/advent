@@ -9,6 +9,7 @@ import Advent.Day8
 import Advent.Day10
 import Advent.Day11
 import Advent.Day12
+import Advent.Day17
 
 import Test.Tasty
 import Test.Tasty.HUnit
@@ -16,7 +17,7 @@ import Test.Tasty.HUnit
 main = defaultMain tests
 
 tests = testGroup "Advent of Code Tests"
-        [day1, day2, day3, day4, day5, day8, day10, day11, day12]
+        [day1, day2, day3, day4, day5, day8, day10, day11, day12, day17]
 
 day1 = testGroup "Day 1"
        [testCase "Part 1" $
@@ -111,3 +112,7 @@ day12 = testGroup "Day 12"
            jsonSumUnred "[1,{\"c\":\"red\",\"b\":2},3]" @?= 4
            jsonSumUnred "{\"d\":\"red\",\"e\":[1,2,3,4],\"f\":5}" @?= 0
            jsonSumUnred "[1,\"red\",5]" @?= 6]
+
+day17 = testGroup "Day 17"
+        [testCase "Part 1" $
+         countCombs [20, 15, 10, 5, 5] 25 @?= 4]
