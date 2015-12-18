@@ -115,4 +115,6 @@ day12 = testGroup "Day 12"
 
 day17 = testGroup "Day 17"
         [testCase "Part 1" $
-         countCombs [20, 15, 10, 5, 5] 25 @?= 4]
+         countCombs [20, 15, 10, 5, 5] 25 @?= 4
+        ,testCase "Part 2" $
+         countMinCombs [20, 15, 10, 5, 5] 25 @?= 3]
